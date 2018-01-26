@@ -18,7 +18,7 @@ const cipher = () => {
   console.log(content);
     if(cipherInput.value == !letters) {
       alert('Ingrese el mensaje que desea Cifrar');
-      
+
     } else {
 
       for (let j = 0, l = content.length; j < l; j++) {
@@ -33,12 +33,12 @@ const cipher = () => {
         };
     }
     cipherText.textContent = output;
-
   };
+
   btnCipher.addEventListener('click', cipher);
 
 const decipher = () => {
-  let input2 = $('#decipher').val();
+  let input2 = decipherInput.value;
   let output1 = '';
   for (let i = 0, l = input2.length; i < l; i++) {
     //Por medio de una condicional que en este caso es if preguntamos si if es igual a un espacio vacio
@@ -51,6 +51,7 @@ const decipher = () => {
     }
   }
   //Mostramos en pantalla la frase descifrada
-  return $('.textDecipher').text(output1);
-}
-$('#btnDecipher').click(decipher);
+  decipherText.textContent = output1;
+};
+
+btnDecipher.addEventListener('click', decipher);
