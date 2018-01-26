@@ -32,8 +32,8 @@ const cipher = () => {
           };
         };
     }
-    cipherText.textContent = output;
-  };
+  cipherText.textContent = output;
+};
 
   btnCipher.addEventListener('click', cipher);
 
