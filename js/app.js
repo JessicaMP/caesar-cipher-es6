@@ -1,31 +1,41 @@
+//Variablea Globales
+//Cipher
+let btnCipher = document.getElementById('btnCipher');
+let cipherInput = document.getElementById('cipher');
+let cipherText = document.querySelector('.textCipher p');
+//Decipher
+let btnDecipher = document.getElementById('btnDecipher');
+let decipherInput = document.getElementById('decipher');
+let decipherText = document.querySelector('.textDecipher p');
+
 const cipher = () => {
-  let input = $('#cipher').val();
+  let input = cipherInput.value;
   let letters = /[a-zA-Z\s]/g;
-
+  var number = /^([0-9])*$/;
   let output = '';
-  let content = $('#cipher').val().toUpperCase();
-    if(/[a-zA-Z\s]/g.test(input) {
+  let content = input.toUpperCase();
 
-
-
-    console.log(content);
-
-    for (let j = 0, l = content.length; j < l; j++) {
-      //Por medio de la condicion de if verificamos que si el contenido ingresado contiene espacios
-      if (content[j] === ' ') {
-        //se respete y se ingrese este tambien
-        output += ' ';
-        //de lo contrario se lee normal y se le agrega a la variable output el valor cifrado utilizando los dos metodos de ASCII input1.charCodeAt(k) te brinda la posicion de la letra en el codigo ASCII Y String.fromCharCode() te brinda la letra en la posicion dada en codigo ASCII
-      } else {
-        output += String.fromCharCode((content.charCodeAt(j) - 65 + 33) % 26 + 65);
-        };
-      };
-    } else {
+  console.log(content);
+    if(cipherInput.value == !letters) {
       alert('Ingrese el mensaje que desea Cifrar');
+      
+    } else {
+
+      for (let j = 0, l = content.length; j < l; j++) {
+        //Por medio de la condicion de if verificamos que si el contenido ingresado contiene espacios
+        if (content[j] === ' ') {
+          //se respete y se ingrese este tambien
+          output += ' ';
+          //de lo contrario se lee normal y se le agrega a la variable output el valor cifrado utilizando los dos metodos de ASCII input1.charCodeAt(k) te brinda la posicion de la letra en el codigo ASCII Y String.fromCharCode() te brinda la letra en la posicion dada en codigo ASCII
+        } else {
+          output += String.fromCharCode((content.charCodeAt(j) - 65 + 33) % 26 + 65);
+          };
+        };
     }
-    $('.textCipher').text(output);
+    cipherText.textContent = output;
+
   };
-  $('#btnCipher').click(cipher);
+  btnCipher.addEventListener('click', cipher);
 
 const decipher = () => {
   let input2 = $('#decipher').val();
