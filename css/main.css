@@ -1,0 +1,11 @@
+* {
+  font-family: 'Amaranth', sans-serif;
+}
+
+.title {
+  margin-bottom: 0;
+}
+
+.toUpperCase {
+  text-transform: uppercase;
+}
